@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+
+{% block header %}
+    Delete
+{% endblock header %}
+
+{% block content %}
+
+{% for car in car_list %}
+    <ul>
+        <li>
+            <h1>{{car.make}}</h1>
+        </li>
+        <li>
+            <a href="{% url 'delete.html' object_id=car.id %}">Delete</a>
+        </li>
+    </ul><br>
+{% endfor %}
+
+{% endblock content %}
